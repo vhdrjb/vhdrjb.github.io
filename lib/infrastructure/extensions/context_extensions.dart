@@ -7,5 +7,21 @@ extension ContextExtensions on BuildContext {
           ? AppColorScheme.dark()
           : AppColorScheme.light();
 
-  TextTheme get textTheme => Theme.of(this).textTheme;
+  TextTheme get textTheme => Theme.of(this).textTheme.copyWith(
+    // navbar
+    labelMedium: const TextStyle(
+      fontFamily: 'navbar_font',
+      fontWeight: FontWeight.bold,
+      fontSize: 15
+    ),
+    headlineLarge: const TextStyle(
+      fontFamily: 'primary_font',
+      fontSize: 96
+    ),
+    headlineMedium: const TextStyle(
+      fontFamily: 'primary_font',
+      fontSize: 64
+    ),
+  );
+
 }

@@ -4,7 +4,7 @@ abstract class AppColorScheme extends ColorScheme {
   static AppColorScheme? _darkInstance;
   static AppColorScheme? _lightInstance;
 
-  const AppColorScheme._light() : super.light();
+  const AppColorScheme._light({super.secondary, super.surface}) : super.light();
 
   const AppColorScheme._dark() : super.dark();
 
@@ -17,12 +17,31 @@ abstract class AppColorScheme extends ColorScheme {
     _darkInstance ??= const _DarkColorScheme();
     return _darkInstance!;
   }
+
+  Color get headlineSecondaryColor;
+
+  Color get headlinePrimaryColor;
 }
 
 class _LightColorScheme extends AppColorScheme {
-  const _LightColorScheme() : super._light();
+  const _LightColorScheme()
+      : super._light(
+            secondary: const Color(0xff69473F),
+            surface: const Color(0xffEFEFEF));
+
+  @override
+  Color get headlinePrimaryColor => const Color(0xff474340);
+
+  @override
+  Color get headlineSecondaryColor => const Color(0xffB9B9B9);
 }
 
 class _DarkColorScheme extends AppColorScheme {
   const _DarkColorScheme() : super._dark();
+
+  @override
+  Color get headlinePrimaryColor => throw UnimplementedError();
+
+  @override
+  Color get headlineSecondaryColor => throw UnimplementedError();
 }
