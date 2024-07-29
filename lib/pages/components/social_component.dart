@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/infrastructure/extensions/string_extensions.dart';
 import 'package:portfolio/infrastructure/theme/dimensions.dart';
 
@@ -14,27 +15,27 @@ class SocialComponent extends StatelessWidget {
       children: [
         ShadowImage(
           image: 'github'.toPngImage,
-          height: Dimensions.socialIconSize,
-          width: Dimensions.socialIconSize,
+          height: Dimensions.socialIconSize.w,
+          width: Dimensions.socialIconSize.w,
 
         ),
         Dimensions.marginVertical_64,
         ShadowImage(
           image: 'linkedin'.toPngImage,
-          height: Dimensions.socialIconSize,
-          width: Dimensions.socialIconSize,
+          height: Dimensions.socialIconSize.w,
+          width: Dimensions.socialIconSize.w,
         ),
         Dimensions.marginVertical_64,
         ShadowImage(
           image: 'telegram'.toPngImage,
-          height: Dimensions.socialIconSize,
-          width: Dimensions.socialIconSize,
+          height: Dimensions.socialIconSize.w,
+          width: Dimensions.socialIconSize.w,
         ),
         Dimensions.marginVertical_64,
         ShadowImage(
           image: 'instagram'.toPngImage,
-          height: Dimensions.socialIconSize,
-          width: Dimensions.socialIconSize
+          height: Dimensions.socialIconSize.w,
+          width: Dimensions.socialIconSize.w
         ),
       ],
     );

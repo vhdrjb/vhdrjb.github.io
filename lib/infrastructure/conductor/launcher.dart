@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -17,5 +18,9 @@ Future<void> launch(Application application) async {
       path: 'assets/l10n',
       supportedLocales: const [Locale('en')],
       fallbackLocale: const Locale('en'),
-      child: application()));
+      child: ScreenUtilInit(
+          minTextAdapt: true,
+          splitScreenMode: true,
+          designSize: const Size(1920, 1080),
+          builder: (context, child) => application())));
 }

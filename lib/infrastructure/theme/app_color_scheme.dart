@@ -21,6 +21,11 @@ abstract class AppColorScheme extends ColorScheme {
   Color get headlineSecondaryColor;
 
   Color get headlinePrimaryColor;
+
+  Color get profileBackgroundColor;
+
+  Color get homeInfoLabelColor;
+
 }
 
 class _LightColorScheme extends AppColorScheme {
@@ -34,6 +39,12 @@ class _LightColorScheme extends AppColorScheme {
 
   @override
   Color get headlineSecondaryColor => const Color(0xffB9B9B9);
+
+  @override
+  Color get profileBackgroundColor => const Color(0xffD9D9D9);
+
+  @override
+  Color get homeInfoLabelColor => const Color(0xff63717F);
 }
 
 class _DarkColorScheme extends AppColorScheme {
@@ -44,4 +55,10 @@ class _DarkColorScheme extends AppColorScheme {
 
   @override
   Color get headlineSecondaryColor => throw UnimplementedError();
+
+  @override
+  Color get profileBackgroundColor => throw UnimplementedError();
+
+  @override
+  Color get homeInfoLabelColor => throw UnimplementedError();
 }

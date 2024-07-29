@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class Dimensions {
   static const double navbarDividerHeight = 33;
   static const double navbarDividerWidth = 1;
-  static const double socialIconSize = 35;
+  static const double socialIconSize = 30;
+  static const double profileSize = 200;
+  static const double homeDividerWidth =2;
+  static const double homeDividerHeight = 58;
 
   // margins
   static const double margin_4 = 4;
@@ -13,16 +17,16 @@ abstract class Dimensions {
   static const double margin_32 = 32;
   static const double margin_64 = 64;
 
-  static const SizedBox marginVertical_4 = SizedBox(height: 4,);
-  static const SizedBox marginVertical_8 = SizedBox(height: 8,);
-  static const SizedBox marginVertical_16 = SizedBox(height: 16,);
-  static const SizedBox marginVertical_24 = SizedBox(height: 24,);
-  static const SizedBox marginVertical_32 = SizedBox(height: 32,);
-  static const SizedBox marginVertical_64 = SizedBox(height: 64,);
-  static const SizedBox marginHorizontal_4 = SizedBox(width: 4,);
-  static const SizedBox marginHorizontal_8 = SizedBox(width: 8,);
-  static const SizedBox marginHorizontal_16 = SizedBox(width: 16,);
-  static const SizedBox marginHorizontal_24 = SizedBox(width: 24,);
-  static const SizedBox marginHorizontal_32 = SizedBox(width: 32,);
-  static const SizedBox marginHorizontal_64 = SizedBox(width: 64,);
+  static  SizedBox marginVertical_4 = 4.verticalSpace;
+  static  SizedBox marginVertical_8 = 8.verticalSpace;
+  static  SizedBox marginVertical_16 = 16.verticalSpace;
+  static  SizedBox marginVertical_24 = 24.verticalSpace;
+  static  SizedBox marginVertical_32 = 32.verticalSpace;
+  static  SizedBox marginVertical_64 = 64.verticalSpace;
+  static  SizedBox marginHorizontal_4 = 4.horizontalSpace;
+  static  SizedBox marginHorizontal_8 = 8.horizontalSpace;
+  static  SizedBox marginHorizontal_16 = 16.horizontalSpace;
+  static  SizedBox marginHorizontal_24 = 24.horizontalSpace;
+  static  SizedBox marginHorizontal_32 =32.horizontalSpace;
+  static  SizedBox marginHorizontal_64 = 64.horizontalSpace;
 }
