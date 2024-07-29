@@ -18,6 +18,14 @@ extension ContextExtensions on BuildContext {
             fontFamily: 'primary_font',
             fontSize: 32.sp,
             fontWeight: FontWeight.bold),
+        titleMedium: TextStyle(
+          fontFamily: 'primary_font',
+          fontSize: 20.sp
+        ),
+        labelSmall: TextStyle(
+          fontFamily: 'primary_font',
+          fontSize: 20.sp
+        ),
         labelLarge: TextStyle(fontFamily: 'primary_font', fontSize: 24.sp),
         headlineLarge: TextStyle(fontFamily: 'primary_font', fontSize: 96.sp),
         headlineMedium: TextStyle(fontFamily: 'primary_font', fontSize: 64.sp),

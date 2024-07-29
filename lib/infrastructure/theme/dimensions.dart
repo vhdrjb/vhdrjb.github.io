@@ -8,6 +8,7 @@ abstract class Dimensions {
   static const double profileSize = 200;
   static const double homeDividerWidth =2;
   static const double homeDividerHeight = 58;
+  static const double projectBorders = 16;
 
   // margins
   static const double margin_4 = 4;
