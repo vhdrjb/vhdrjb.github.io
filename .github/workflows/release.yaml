@@ -1,0 +1,62 @@
+name: Portfolio Page CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - cicd
+  pull_request:
+    branches:
+      - main
+      - cicd
+
+jobs:
+  ci:
+    name: build page
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel : 'stable'
+          flutter-version: 3.22.2
+
+      - name: Install dependencies
+        run: flutter pub get
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: ci
+    if: success()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Flutter action
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.22.2 # path to pubspec.yaml
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build the web project
+        run: flutter build web --web-renderer canvaskit
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/web
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+  packages: none
