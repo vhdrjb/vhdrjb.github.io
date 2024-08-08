@@ -8,6 +8,16 @@ class AppTheme {
       : themeData = ThemeData(
             colorScheme: AppColorScheme.light(),
             fontFamily: 'primary_font',
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                foregroundColor: const Color(0xff474340),
+                backgroundColor: Colors.transparent,
+                surfaceTintColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+                overlayColor: Colors.transparent,
+                elevation: 0
+              )
+            ),
             useMaterial3: true);
 
   AppTheme._dark()

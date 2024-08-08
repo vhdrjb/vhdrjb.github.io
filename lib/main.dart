@@ -1,6 +1,11 @@
+import 'dart:html' as html;
+import 'dart:ui' as ui;
+import 'dart:ui';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio/infrastructure/conductor/launcher.dart';
+import 'package:portfolio/infrastructure/configuration/resolution_config.dart';
 import 'package:portfolio/infrastructure/route/provider/app_router.dart';
 import 'package:portfolio/infrastructure/theme/app_theme.dart';
 
@@ -26,13 +31,21 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: _router.generateRouter(),
-      title: 'Vahid Rajabi Portfolio',
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
-      theme: AppTheme.theme(brightness: Brightness.light).themeData,
+    return ScreenUtilInit(
+    designSize: ResolutionConfig.instance.getDesignSize(context),
+      child: MaterialApp.router(
+        title: 'Vahid Rajabi Portfolio',
+        localizationsDelegates: context.localizationDelegates,
+        supportedLocales: context.supportedLocales,
+        routerDelegate: _router.router.routerDelegate,
+        routeInformationParser: _router.router.routeInformationParser,
+        routeInformationProvider: _router.router.routeInformationProvider,
+        scrollBehavior: const MaterialScrollBehavior().copyWith(
+          dragDevices: {PointerDeviceKind.mouse, PointerDeviceKind.touch, PointerDeviceKind.stylus, PointerDeviceKind.unknown},
+        ),
+        locale: context.locale,
+        theme: AppTheme.theme(brightness: Brightness.light).themeData,
+      ),
     );
   }
 }
