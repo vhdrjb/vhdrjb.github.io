@@ -1,46 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:portfolio/infrastructure/extensions/context_extensions.dart';
 import 'package:portfolio/infrastructure/theme/dimensions.dart';
 import 'package:portfolio/presentation/components/nav_bar_component.dart';
 import 'package:portfolio/presentation/components/social_component.dart';
+import 'package:portfolio/presentation/notifier/page_notifier.dart';
+import 'package:portfolio/presentation/pages/home/home_delegate.dart';
 
+import '../../notifier/scroll_notifier.dart';
 import 'home_body.dart';
 import 'home_info.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends StatefulWidget {
+  final ScrollController scrollController;
+  const HomePage({super.key,required this.scrollController});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late ScrollNotifier _scrollNotifier;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollNotifier = PageNotifier.instance.listen(1);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height,
-      child: const Stack(children: [
-        Positioned(
-          right: Dimensions.margin_32,
-          top: Dimensions.margin_32,
-          child: NavBarComponent(),
+    return CustomScrollView(
+      shrinkWrap: true,
+      slivers: [
+        SliverPersistentHeader(
+          delegate: HomeDelegate(scrollNotifier: _scrollNotifier,maxHeight: 0),
+          pinned: true,
         ),
-        Positioned(
-          left: Dimensions.margin_32,
-          bottom: 0,
-          top: 0,
-          child: Center(child: SocialComponent()),
-        ),
-        Positioned.fill(
-          top: Dimensions.margin_64,
-          left: Dimensions.margin_64 * 2,
-          right: Dimensions.margin_64,
-          bottom: Dimensions.margin_64,
-          child: Center(child: HomeBody()),
-        ),
-        Positioned(
-          left: Dimensions.margin_64,
-          right: Dimensions.margin_64,
-          bottom: Dimensions.margin_64,
-          child: HomeInfo(),
-        ),
-      ]),
+      ],
     );
   }
 }

@@ -20,7 +20,7 @@ extension StringExtensions on String {
   String get toNetworkImage =>
       '${html.window.location.origin}/assets/assets/images/projects/$this';
 
-  AssetImage get toPngImage => AssetImage('assets/assets/images/png/$this.png');
+  AssetImage get toPngImage => AssetImage('assets/images/png/$this.png');
 
-  AssetImage get toJpgImage => AssetImage('assets/assets/images/jpg/$this.jpg');
+  AssetImage get toJpgImage => AssetImage('assets/images/jpg/$this.jpg');
 }

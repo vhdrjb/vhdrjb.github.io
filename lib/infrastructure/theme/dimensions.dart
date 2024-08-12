@@ -6,6 +6,7 @@ abstract class Dimensions {
   static const double navbarDividerWidth = 1;
   static const double socialIconSize = 30;
   static const double profileSize = 200;
+  static const double profileMinSize = 50;
   static const double homeDividerWidth =2;
   static const double homeDividerHeight = 58;
   static const double projectBorders = 16;

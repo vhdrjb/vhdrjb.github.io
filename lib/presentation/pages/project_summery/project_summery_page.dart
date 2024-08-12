@@ -58,7 +58,7 @@ class ProjectSummeryPage extends StatelessWidget {
                 )
               ],
             ),
-            Dimensions.marginVertical_32,
+            Dimensions.marginVertical_64,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
