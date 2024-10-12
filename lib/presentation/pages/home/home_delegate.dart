@@ -33,7 +33,6 @@ class HomeDelegate extends SliverPersistentHeaderDelegate {
             child: Stack(
                 clipBehavior: Clip.none,
                 children: [
-
               Positioned(
                 left: Dimensions.margin_32 - scrollNotifier.scrollOffset,
                 bottom: 0,

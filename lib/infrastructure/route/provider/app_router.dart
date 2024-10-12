@@ -33,6 +33,11 @@ class AppRouter {
               path: Routes.projectDetail,
               pageBuilder: _factory.create,
               name: Routes.projectDetail),
+          GoRoute(
+              path: Routes.custom,
+              pageBuilder: _factory.create,
+              name: Routes.custom),
+
         ],
       );
       _goRouter = goRouter;

@@ -32,12 +32,9 @@ class PageNotifier {
     this.index = index;
   }
 
-  void updateStartScroll(double startScroll) {
-    _listeners[index]?.updateStartScroll(startScroll);
-  }
-
   void updateScrollOffset(double scrollOffset) {
-    _listeners[index]?.updateScrollOffset(min(scrollOffset,_thresholds[index]!));
+      _listeners[0]?.updateScrollOffset(scrollOffset);
+      _listeners[1]?.updateScrollOffset(scrollOffset);
   }
 
 

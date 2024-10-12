@@ -28,14 +28,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      shrinkWrap: true,
-      slivers: [
-        SliverPersistentHeader(
-          delegate: HomeDelegate(scrollNotifier: _scrollNotifier,maxHeight: 0),
-          pinned: true,
-        ),
-      ],
-    );
+    return Placeholder();
+    // return CustomScrollView(
+    //   shrinkWrap: true,
+    //   slivers: [
+    //     SliverPersistentHeader(
+    //       delegate: HomeDelegate(scrollNotifier: _scrollNotifier,maxHeight: 0,(context) {
+    //
+    //       },),
+    //       pinned: true,
+    //     ),
+    //   ],
+    // );
   }
 }

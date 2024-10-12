@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:portfolio/presentation/pages/custom/custom_page.dart';
 import 'package:portfolio/presentation/pages/home/home_page.dart';
 import 'package:portfolio/presentation/pages/home/home_page_provider.dart';
 import 'package:portfolio/presentation/pages/project_detail/project_detail_page_provider.dart';
@@ -25,6 +26,8 @@ class AppRouteFactory {
       String? projectName = state.extra?.toString();
       return MaterialPage(
           child: ProjectDetailPageProvider(id: projectId!),);
+    }else if (path == Routes.custom) {
+      return MaterialPage(child: CustomPage());
     }
 
     throw 'error';
