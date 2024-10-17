@@ -44,7 +44,7 @@ dev_dependencies:
   json_serializable: ^6.8.0
   bloc_test: ^9.1.7
   widget_component: 1.0.6
-  flutter_native_splash: ^2.4.1
+  flutter_native_splash: ^2.3.12
 
 
 flutter:
