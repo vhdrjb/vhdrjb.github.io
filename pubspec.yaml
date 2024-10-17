@@ -22,7 +22,7 @@ dependencies:
   json_annotation: ^4.9.0
   go_router: ^14.2.7
   flutter_bloc: ^8.1.6
-  meta: ^1.15.0
+  meta: 
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
   cached_network_image: ^3.4.1
